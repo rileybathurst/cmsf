@@ -1,0 +1,34 @@
+/*
+	Theme Name:   Twenty Twenty One Child
+	Description:  Twenty Twenty One Child Theme
+	Theme URI:    https://cordellfoundation.org/
+	Author:       Riley Bathurst
+	Author URI:   http://rileybathurst.com
+	Template:     twentytwentyone
+	Version:      1.0.0
+	Tags:         education, light, dark, responsive-layout, accessibility-ready
+	Text Domain:  twentytwentyonechild
+*/
+
+body {
+	background: rebeccapurple !important;
+}
+
+
+.wp-block-group.is-style-widewidthcolumns {
+	max-width: 22rem; /* skinny to test */
+	margin-right: 0;
+}
+
+.wp-block-columns.fullwidth-wide > .wp-block-column:first-child {
+	margin-right: 0;
+}
+
+.wp-block-columns.fullwidth-wide > .wp-block-column:last-child {
+	margin-left: 0;
+}
+
+/* this is going to turn into a whole lot of code */
+.my-grid > .wp-block-group__inner-container {
+	display: grid;
+}
