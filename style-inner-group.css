@@ -14,45 +14,55 @@
 	background: rebeccapurple !important;
 } */
 
-:root {
-	--maya: hsl(189.8, 81%, 37.1%);
-	--cerulean: hsl(189.5, 90.9%, 25.9%);
-	--seahorse: hsl(48.9, 98.4%, 49.4%);
+.wp-block-group.is-style-widewidthcolumns {
+	max-width: 22rem; /* skinny to test */
+	margin-right: 0;
+}
+
+.wp-block-columns.fullwidth-wide > .wp-block-column:first-child {
+	margin-right: 0;
+}
+
+.wp-block-columns.fullwidth-wide > .wp-block-column:last-child {
+	margin-left: 0;
 }
 
 /*------------------------------------*\
   #Patterns
 \*------------------------------------*/
 
-/* Theres a way of having this go left to right I just don't know what it is */
+/* before installing the gutenberg plugin this was right for the patterns but I guess thats the direction its going */
 
 .cmsf-hero {
-	/* padding: 0 !important; /* set this inline */
+	padding: 0 !important; /* it has to be there or we have to do an id or something? */
+}
+
+.cmsf-hero > .wp-block-group__inner-container {
 	display: grid;
 	grid-template-columns: 1fr;
 }
 
 @media (min-width: 52rem) {
-	.cmsf-hero >  {
+	.cmsf-hero > .wp-block-group__inner-container {
 		grid-template-columns: 1fr 26rem 26rem 1fr;
 	}
 }
 
-.cmsf-hero > * {
+.cmsf-hero > .wp-block-group__inner-container > * {
 	grid-row: 1;
 }
 
-.cmsf-hero > .wp-block-columns {
+.cmsf-hero > .wp-block-group__inner-container > .wp-block-columns {
 	grid-column: 1;
 }
 
 @media (min-width: 52rem) {
-	.cmsf-hero > .wp-block-columns {
+	.cmsf-hero > .wp-block-group__inner-container > .wp-block-columns {
 		grid-column: 2 / 4;
 	}
 }
 
-.cmsf-hero > .wp-block-image {
+.cmsf-hero > .wp-block-group__inner-container > .wp-block-image {
 	display: none;
 	width: 100%;
 	max-width: 100% !important; /* overwrite this might be the width of the image */
@@ -63,13 +73,13 @@
 }
 
 @media (min-width: 52rem) {
-	.cmsf-hero > .wp-block-image {
+	.cmsf-hero > .wp-block-group__inner-container > .wp-block-image {
 		display: grid;
 		grid-column: 3/5;
 	}
 }
 
-.cmsf-hero > .wp-block-image > img {
+.cmsf-hero > .wp-block-group__inner-container > .wp-block-image > img {
 	height: 100%;
 	overflow-x: hidden;
 }
@@ -80,31 +90,34 @@
 
 .cmsf-zero {
 	padding: 0;
+}
+
+.cmsf-zero > .wp-block-group__inner-container {
 	display: grid;
 	grid-template-columns: 1fr;
 }
 
 @media (min-width: 52rem) {
-	.cmsf-zero {
+	.cmsf-zero > .wp-block-group__inner-container {
 		grid-template-columns: 1fr 26rem 26rem 1fr;
 	}
 }
 
-.cmsf-zero > * {
+.cmsf-zero > .wp-block-group__inner-container > * {
 	grid-row: 1;
 }
 
-.cmsf-zero > .wp-block-columns {
+.cmsf-zero > .wp-block-group__inner-container > .wp-block-columns {
 	grid-column: 1;
 }
 
 @media (min-width: 52rem) {
-	.cmsf-zero > .wp-block-columns {
+	.cmsf-zero > .wp-block-group__inner-container > .wp-block-columns {
 		grid-column: 2 / 4;
 	}
 }
 
-.cmsf-zero > .wp-block-image {
+.cmsf-zero > .wp-block-group__inner-container > .wp-block-image {
 	display: none;
 	width: 100%;
 	max-width: 100% !important; /* overwrite this might be the width of the image */
@@ -115,13 +128,13 @@
 }
 
 @media (min-width: 52rem) {
-	.cmsf-zero > .wp-block-image {
+	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image {
 		display: grid;
 		grid-column: 1/3;
 	}
 }
 
-.cmsf-zero > .wp-block-image > img {
+.cmsf-zero > .wp-block-group__inner-container > .wp-block-image > img {
 	height: 100%;
 	overflow-x: hidden;
 }
@@ -226,133 +239,4 @@ well thats ridiculous
 		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 842px);
 		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
 	}
-}
-
-
-/*------------------------------------*\
-  #Header can I just CSS this?
-\*------------------------------------*/
-
-.site-header {
-	display: grid;
-	margin-block-end: 1rem;
-	max-width: 100vw;
-	padding-block: 0;
-}
-
-.site-header::before,
-.site-header::after {
-	display: none;
-}
-
-.site-header > * {
-	grid-row: 1;
-	grid-column: 1;
-}
-
-.site-header svg {
-	z-index: 2; /* show the curved background */
-	align-self: end;
-	margin-block-end: -1rem;
-	fill: white;
-}
-
-.home .site-header svg {
-	fill: var(--cerulean);
-}
-
-/* .site-header > img {
-	object-fit: cover;
-	width: 100%;
-	max-height: 10rem;
-	z-index: 1;
-} */
-
-.site-header .header-grid--overlay {
-	background: var(--cerulean);
-	mix-blend-mode: multiply;
-	z-index: 2;
-	height: 100%;
-	border-bottom: 1rem solid white;
-}
-
-.home .site-header .header-grid--overlay {
-	border-color: var(--cerulean);
-}
-
-.site-header .site-logo {
-	height: 100%;
-	max-height: 10rem; /* safari needs something */
-	width: 100%;
-	display: block;
-	z-index: 3;
-}
-
-.site-header .hero {
-	z-index: 4;
-	width: 100%;
-	max-width: var(--responsive--aligndefault-width);
-	margin-inline: auto;
-	display: grid;
-	padding-inline: 1rem;
-}
-
-.site-header	.hero > .site-branding {
-	grid-row: 1;
-	grid-column: 1;
-	align-self: center;
-	display: flex;
-	align-items: baseline;
-}
-
-.site-header .site-logo {
-	width: min-content;
-	border-bottom: none;
-}
-
-.site-header .site-branding a {
-	color: white;
-	text-decoration: none;
-}
-
-.site-header .site-description {
-	display: none;
-}
-
-/* .site-header a > svg {
-	fill: var(--seahorse);
-} */
-
-.site-header button {
-	grid-row: 2;
-	grid-column: 2;
-	justify-self: end;
-	align-self: end;
-	background-color: var(--seahorse) !important;
-}
-
-.site-branding:last-child {
-	width: auto;
-}
-
-.home .site-nav-wrapper {
-	background: var(--cerulean);
-}
-
-.primary-navigation {
-	max-width: var(--responsive--aligndefault-width);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.primary-navigation a:link {
-	color: var(--cerulean);
-}
-
-.home .primary-navigation a:link {
-	color: var(--seahorse);
-}
-
-.home .site-main {
-	padding-top: 0;
 }

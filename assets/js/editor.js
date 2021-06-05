@@ -1,6 +1,6 @@
 wp.domReady( () => {
 
-	wp.blocks.registerBlockStyle(
+	/* wp.blocks.registerBlockStyle(
 		'core/group',
 		[
 			{
@@ -22,5 +22,5 @@ wp.domReady( () => {
 				label: 'Full Width Wide',
 			}
 		]
-	);
+	); */
 } );
