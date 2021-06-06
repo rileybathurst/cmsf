@@ -1,26 +1,13 @@
 wp.domReady( () => {
 
-	/* wp.blocks.registerBlockStyle(
-		'core/group',
+	wp.blocks.registerBlockStyle(
+		'core/image',
 		[
 			{
-				name: 'widewidthcolumns-left',
-				label: 'Wide Width Left Column',
-			},
-			{
-				name: 'widewidthcolumns-right',
-				label: 'Wide Width Right Column',
+				name: 'desatured-multiply',
+				label: 'Desaturated Multiply',
 			}
 		]
 	);
 
-  wp.blocks.registerBlockStyle(
-		'core/columns',
-		[
-			{
-				name: 'fullwidth-wide',
-				label: 'Full Width Wide',
-			}
-		]
-	); */
 } );

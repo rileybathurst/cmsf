@@ -10,3 +10,8 @@ body {
   margin-right: auto;
   border: 10px solid rebeccapurple;
 }
+
+.is-style-desatured-multiply img {
+	mix-blend-mode: multiply;
+	filter: saturate(0) !important;
+}
