@@ -19,8 +19,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
     
     <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100" height="2" y="8" fill="lightgray" />
-      <path d="m 0 8 C 25 10, 75 2, 100 2 L 100 8 L 0 8 Z" fill="lightgray" />
+      <rect width="100" height="2" y="8" fill="#f0f0f0" />
+      <path d="m 0 8 C 25 10, 75 2, 100 2 L 100 8 L 0 8 Z" fill="#f0f0f0" />
       <path d="m 0 8 C 25 10, 75 2, 100 2" stroke="#066B7E" fill="transparent" />
     </svg>
     
