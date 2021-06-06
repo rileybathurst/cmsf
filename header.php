@@ -35,18 +35,23 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentytwentyone' ); ?></a>
-
-	<header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
-
+  
+  <?php wp_body_open(); ?>
+  <div id="page" class="site">
+    
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentytwentyone' ); ?></a>
+    
+    <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
+      
+    <img src="<?php echo get_option( 'image_upload_test' ); ?>" alt="<?php echo get_option( 'text_test' ); ?>" />
+    
     <div class="header-grid--overlay"><!-- stay gold --></div>
 
+    <!-- the if statement is a little hacky to get a 1px border to dissappear -->
     <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100" height="2" y="8" />
+      <rect id="hide" width="100" height="2" y="8" stroke-width="1" />
       <path d="m 0 8 C 25 10, 75 2, 100 2 L 100 8 L 0 8 Z" />
-      <path d="m 0 8 C 25 10, 75 2, 100 2" stroke="#1292ab" fill="transparent" stroke-width="2" />
+      <path d="m 0 8 C 25 10, 75 2, 100 2" fill="transparent" stroke="#1292ab" stroke-width="2" />
     </svg>
 
     <div class="hero">
