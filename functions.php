@@ -26,26 +26,59 @@ function mytheme_setup_theme_supported_features() {
 	// block styles
   add_theme_support( 'wp-block-styles' );
 
-  // Editor color palette.
-	$tck     = '#d32331';
 
-	add_theme_support(
-		'editor-color-palette',
+	// this will hopefully become theme.json
+	// https://wordpress.org/support/topic/override-color-palette-in-child-theme/
+	// add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'editor-color-palette', array(
 		array(
-			array(
-				'name'  => esc_html__( 'Black', 'twentytwentyonechild' ),
-				'slug'  => 'black',
-				'color' => $tck,
-			)
-		)
-	);
+				'name' => esc_attr__( 'maya', 'twentytwentyonechild' ),
+				'slug' => 'maya',
+				'color' => '#1292AB',
+		),
+		array(
+				'name' => esc_attr__( 'cerulean', 'twentytwentyonechild' ),
+				'slug' => 'cerulean',
+				'color' => '#066B7E',
+		),
+		array(
+				'name' => esc_attr__( 'seahorse', 'twentytwentyonechild' ),
+				'slug' => 'seahorse',
+				'color' => '#FACC02',
+		),
+		array(
+				'name' => esc_attr__( 'black', 'twentytwentyonechild' ),
+				'slug' => 'black',
+				'color' => '#000',
+		),
+		array(
+				'name' => esc_attr__( 'dark gray', 'twentytwentyonechild' ),
+				'slug' => 'dark-gray',
+				'color' => '#28303d',
+		),
+		array(
+				'name' => esc_attr__( 'gray', 'twentytwentyonechild' ),
+				'slug' => 'gray',
+				'color' => '#39414d',
+		),
+		array(
+				'name' => esc_attr__( 'light gray', 'twentytwentyonechild' ),
+				'slug' => 'light-gray',
+				'color' => '#f0f0f0',
+		),
+		array(
+				'name' => esc_attr__( 'white', 'twentytwentyonechild' ),
+				'slug' => 'white',
+				'color' => '#fff',
+		),
+	) );
 
 	// https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
 	add_theme_support( 'editor-styles' );
 	add_editor_style( '/style-editor.css' );
 
 }
-add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
+add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features', 100 );
 
 // block patterns
 // require_once( get_stylesheet_directory_uri() . '/func/block_patterns.php' );
