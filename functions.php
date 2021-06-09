@@ -61,43 +61,38 @@ function register_my_patterns() {
 				// 'categories'  => __('columns', )
 		)
 	);
+
+	register_block_pattern(
+		'hero_pattern',
+		array(
+				'title'       => __( 'cmsf-hero', 'cmsf' ),
+				'description' => _x( 'Two Columns with an image behind.', 'Block pattern description', 'cmsf' ),
+				'content'     => "<!-- wp:group {\"align\":\"full\",\"className\":\"cmsf-hero\"} --><div class=\"wp-block-group alignfull cmsf-hero\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"align\":\"full\"} -->\n<div class=\"wp-block-columns alignfull is-style-fullwidth-wide\" ><!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading -->\n<h2>Jeffsum</h2><!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>Must go faster... go, go, go, go, go! They're using our own satellites against us. And the clock is ticking. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here!</p><!-- /wp:paragraph -->\n</div><!-- /wp:column -->\n<!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"></div><!-- /wp:column -->\n</div><!-- /wp:columns -->\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div></div><!-- /wp:group -->",
+				// 'categories'  => __('columns', )
+		)
+	);
+
+	register_block_pattern(
+		'flex_pattern',
+		array(
+			'title'       => __( 'flex-columns', 'cmsf' ),
+			'description' => _x( 'Columns that dont have a size so they collapse as best possible.', 'Block pattern description', 'cmsf' ),
+			'content'     => "<!-- wp:columns {\"className\":\"flex-columns\"} -->\n<div class=\"wp-block-columns flex-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div><!-- /wp:column -->\n<!-- wp:column --><div class=\"wp-block-column\"><!-- wp:group --><div class=\"wp-block-group\"><div class=\"wp-block-group__inner-container\"><!-- wp:paragraph -->\n<p>Must go faster... go, go, go, go, go! We gotta burn the rain forest, dump toxic waste, pollute the air, and rip up the OZONE! 'Cause maybe if we screw up this planet enough, they won't want it anymore! Must go faster. I gave it a cold? I gave it a virus. A computer virus.</p><!-- /wp:paragraph -->\n</div></div><!-- /wp:group --></div><!-- /wp:column -->\n</div><!-- /wp:columns -->",
+		)
+	);
+
+	register_block_pattern(
+		'zero_pattern',
+		array(
+				'title'       => __( 'cmsf-zero', 'cmsf' ),
+				'description' => _x( 'Two Columns with an image behind.', 'Block pattern description', 'cmsf' ),
+				'content'     => "<!-- wp:group {\"align\":\"full\",\"className\":\"cmsf-zero\"} --><div class=\"wp-block-group alignfull cmsf-zero\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"align\":\"full\"} -->\n<div class=\"wp-block-columns alignfull is-style-fullwidth-wide\" ><!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"></div><!-- /wp:column -->\n<!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading -->\n<h2>Jeffsum</h2><!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>Must go faster... go, go, go, go, go! They're using our own satellites against us. And the clock is ticking. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here!</p><!-- /wp:paragraph -->\n</div><!-- /wp:column -->\n</div><!-- /wp:columns -->\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div></div><!-- /wp:group -->",
+				// 'categories'  => __('columns', )
+		)
+	);
+
 }
 add_action( 'init', 'register_my_patterns' );
-
-register_block_pattern(
-	'hero_pattern',
-	array(
-			'title'       => __( 'cmsf-hero', 'cmsf' ),
-			'description' => _x( 'Two Columns with an image behind.', 'Block pattern description', 'cmsf' ),
-			'content'     => "<!-- wp:group {\"align\":\"full\",\"className\":\"cmsf-hero\"} --><div class=\"wp-block-group alignfull cmsf-hero\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"align\":\"full\"} -->\n<div class=\"wp-block-columns alignfull is-style-fullwidth-wide\" ><!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading -->\n<h2>Jeffsum</h2><!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>Must go faster... go, go, go, go, go! They're using our own satellites against us. And the clock is ticking. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here!</p><!-- /wp:paragraph -->\n</div><!-- /wp:column -->\n<!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"></div><!-- /wp:column -->\n</div><!-- /wp:columns -->\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div></div><!-- /wp:group -->",
-			// 'categories'  => __('columns', )
-	)
-);
-
-add_action( 'init', 'hero_pattern' );
-
-register_block_pattern(
-	'flex_pattern',
-	array(
-		'title'       => __( 'flex-columns', 'cmsf' ),
-		'description' => _x( 'Columns that dont have a size so they collapse as best possible.', 'Block pattern description', 'cmsf' ),
-		'content'     => "<!-- wp:columns {\"className\":\"flex-columns\"} -->\n<div class=\"wp-block-columns flex-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div><!-- /wp:column -->\n<!-- wp:column --><div class=\"wp-block-column\"><!-- wp:group --><div class=\"wp-block-group\"><div class=\"wp-block-group__inner-container\"><!-- wp:paragraph -->\n<p>Must go faster... go, go, go, go, go! We gotta burn the rain forest, dump toxic waste, pollute the air, and rip up the OZONE! 'Cause maybe if we screw up this planet enough, they won't want it anymore! Must go faster. I gave it a cold? I gave it a virus. A computer virus.</p><!-- /wp:paragraph -->\n</div></div><!-- /wp:group --></div><!-- /wp:column -->\n</div><!-- /wp:columns -->",
-	)
-);
-
-add_action( 'init', 'flex_pattern' );
-
-register_block_pattern(
-	'zero_pattern',
-	array(
-			'title'       => __( 'cmsf-zero', 'cmsf' ),
-			'description' => _x( 'Two Columns with an image behind.', 'Block pattern description', 'cmsf' ),
-			'content'     => "<!-- wp:group {\"align\":\"full\",\"className\":\"cmsf-zero\"} --><div class=\"wp-block-group alignfull cmsf-zero\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"align\":\"full\"} -->\n<div class=\"wp-block-columns alignfull is-style-fullwidth-wide\" ><!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"></div><!-- /wp:column -->\n<!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading -->\n<h2>Jeffsum</h2><!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>Must go faster... go, go, go, go, go! They're using our own satellites against us. And the clock is ticking. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here!</p><!-- /wp:paragraph -->\n</div><!-- /wp:column -->\n</div><!-- /wp:columns -->\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div></div><!-- /wp:group -->",
-			// 'categories'  => __('columns', )
-	)
-);
-
-add_action( 'init', 'zero_pattern' );
 
 // https://developer.wordpress.org/reference/hooks/customize_register/
 function twenttwentyone_child_customize_register($wp_customize){
@@ -106,8 +101,6 @@ function twenttwentyone_child_customize_register($wp_customize){
 		'description' => '',
 		'priority' => 120,
 	));
-
-
 
 	//  =============================
 	//  = Image Upload              =
