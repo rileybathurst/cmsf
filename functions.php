@@ -48,7 +48,7 @@ function mytheme_setup_theme_supported_features() {
 add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
 
 // block patterns
-include( get_stylesheet_directory_uri() . '/func/block_patterns.php' );
+require_once( get_stylesheet_directory_uri() . '/func/block_patterns.php' );
 
 register_block_pattern(
 	'hero_pattern',
