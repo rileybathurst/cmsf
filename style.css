@@ -40,6 +40,48 @@
 	background: var(--seahorse);
 }
 
+.has-maya-background-color {
+	background: var(--maya);
+}
+.has-maya-color {
+	background: var(--maya);
+}
+.has-cerulean-background-color {
+	background: var(--cerulean);
+}
+.has-cerulean-color {
+	background: var(--cerulean);
+}
+.has-black-background-color {
+	background: var(--black);
+}
+.has-black-color {
+	background: var(--black);
+}
+.has-dark-gray-background-color {
+	background: var(--dark-gray);
+}
+.has-dark-gray-color {
+	background: var(--dark-gray);
+}
+.has-gray-background-color {
+	background: var(--gray);
+}
+.has-gray-color {
+	background: var(--gray);
+}
+.has-light-gray-background-color {
+	background: var(--light-gray);
+}
+.has-light-gray-color {
+	background: var(--light-gray);
+}
+.has-light-white-background-color {
+	background: var(--white);
+}
+.has-light-white-color {
+	background: var(--white);
+}
 
 /*
 body {
