@@ -49,8 +49,20 @@ add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
 
 // block patterns
 // require_once( get_stylesheet_directory_uri() . '/func/block_patterns.php' );
-include( get_template_directory() . '/func/block_patterns.php' );
+// include( get_template_directory() . '/func/block_patterns.php' );
 // require_once( get_stylesheet_directory_uri() . '/func/block_patterns.php' );
+
+register_block_pattern(
+	'cmsf_patterns',
+	array(
+			'title'       => __( 'cmsf-hero', 'cmsf' ),
+			'description' => _x( 'Two Columns with an image behind.', 'Block pattern description', 'cmsf' ),
+			'content'     => "<!-- wp:group --><div class=\"wp-block-group cmsf-hero\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"align\":\"full\"} -->\n<div class=\"wp-block-columns alignfull is-style-fullwidth-wide\" ><!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading -->\n<h2>Supporting</h2><!-- /wp:heading -->\n</div><!-- /wp:column -->\n<!-- wp:column {\"width\":\"50%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:paragraph -->\n<p>hey</p><!-- /wp:paragraph -->\n</div><!-- /wp:column -->\n</div><!-- /wp:columns -->\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image -->\n</div></div><!-- /wp:group -->",
+			// 'categories'  => __('columns', )
+	)
+); 
+
+add_action( 'init', 'cmsf_patterns' );
 
 register_block_pattern(
 	'hero_pattern',
