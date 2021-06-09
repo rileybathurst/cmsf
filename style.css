@@ -52,6 +52,12 @@
 .has-cerulean-color {
 	background: var(--cerulean);
 }
+.has-seahorse-background-color {
+	background: var(--seahorse);
+}
+.has-seahorse-color {
+	background: var(--seahorse);
+}
 .has-black-background-color {
 	background: var(--black);
 }
