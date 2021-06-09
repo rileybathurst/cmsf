@@ -44,49 +44,49 @@
 	background: var(--maya);
 }
 .has-maya-color {
-	background: var(--maya);
+	color: var(--maya);
 }
 .has-cerulean-background-color {
 	background: var(--cerulean);
 }
 .has-cerulean-color {
-	background: var(--cerulean);
+	color: var(--cerulean);
 }
 .has-seahorse-background-color {
 	background: var(--seahorse);
 }
 .has-seahorse-color {
-	background: var(--seahorse);
+	color: var(--seahorse);
 }
 .has-black-background-color {
 	background: var(--black);
 }
 .has-black-color {
-	background: var(--black);
+	color: var(--black);
 }
 .has-dark-gray-background-color {
 	background: var(--dark-gray);
 }
 .has-dark-gray-color {
-	background: var(--dark-gray);
+	color: var(--dark-gray);
 }
 .has-gray-background-color {
 	background: var(--gray);
 }
 .has-gray-color {
-	background: var(--gray);
+	color: var(--gray);
 }
 .has-light-gray-background-color {
 	background: var(--light-gray);
 }
 .has-light-gray-color {
-	background: var(--light-gray);
+	color: var(--light-gray);
 }
 .has-light-white-background-color {
 	background: var(--white);
 }
 .has-light-white-color {
-	background: var(--white);
+	color: var(--white);
 }
 
 /*
