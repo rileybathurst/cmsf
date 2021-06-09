@@ -47,9 +47,8 @@ function mytheme_setup_theme_supported_features() {
 }
 add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
 
-// Bring in all the additional files
-// nope this isnt doing the thing
-include( get_template_directory() . '/func/block_patterns.php' );
+// block patterns
+include( get_stylesheet_directory_uri() . '/func/block_patterns.php' );
 
 register_block_pattern(
 	'hero_pattern',
