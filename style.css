@@ -129,8 +129,13 @@ body {
 
 .cmsf-hero > .wp-block-group__inner-container > .wp-block-columns {
 	grid-column: 1;
-	z-index: 3;
 	width: 100% !important; /* hacky fix things */
+}
+
+@media (min-width: 482px) {
+	.cmsf-hero > .wp-block-group__inner-container > .wp-block-columns {
+		z-index: 3; /* over the image but having problems with mobile menu */
+	}
 }
 
 @media (min-width: 52rem) {
@@ -300,6 +305,7 @@ body {
 
 .flex-columns {
 	flex-flow: row nowrap;
+	align-items: baseline;
 }
 
 .flex-columns .wp-block-column:nth-child(2n) {
