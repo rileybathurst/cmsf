@@ -1,0 +1,9 @@
+/* Never load this it's just easier reference */
+
+:root {
+/* Spacing */
+	--global--spacing-unit: 20px;
+	--global--spacing-measure: unset;
+	--global--spacing-horizontal: 25px;
+	--global--spacing-vertical: 30px;
+}

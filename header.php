@@ -79,7 +79,8 @@
       </div><!-- .site-branding -->
       <!-- /title -->
 
-      <button>Donate</button>
+      <!-- <button>Donate</button> -->
+      <a href="https://www.paypal.com/donate/?token=qb-kHWM-n4QXSd4HCd8-fn6cOTUchg32UrTuAAFOZ6dBmQwx5j1E0YIA06Q3rT2TdvQ4r5uDqyMckzeK&locale.x=EN_US" class="button" >Donate</a>
     </div><!-- .hero -->
 
 	</header><!-- #masthead -->

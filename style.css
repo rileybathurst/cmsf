@@ -104,11 +104,11 @@ body {
 @media (min-width: 482px) {
 	.cmsf-hero {
 		padding-right: 0 !important;
+		/* max-width: calc(var(--responsive--alignfull-width) - var(--global--spacing-horizontal)); */
 	}
 }
 
 .cmsf-hero > .wp-block-group__inner-container {
-	/* padding: 0 !important; /* set this inline */
 	display: grid;
 	grid-template-columns: 1fr;
 }
@@ -117,7 +117,7 @@ body {
 		background: var(--maya);
 }
 
-@media (min-width: 482px) {
+@media (min-width: 52rem) {
 	.cmsf-hero > .wp-block-group__inner-container {
 		grid-template-columns: 1fr 26rem 26rem 1fr;
 	}
@@ -129,9 +129,11 @@ body {
 
 .cmsf-hero > .wp-block-group__inner-container > .wp-block-columns {
 	grid-column: 1;
+	z-index: 3;
+	width: 100% !important; /* hacky fix things */
 }
 
-@media (min-width: 482px) {
+@media (min-width: 52rem) {
 	.cmsf-hero > .wp-block-group__inner-container > .wp-block-columns {
 		grid-column: 2 / 4;
 	}
@@ -145,28 +147,30 @@ body {
 	min-height: 100%;
 	object-fit: cover; /* this isnt there yet */
 	margin-block-start: 0;
+	grid-row: 1;
+	grid-column: 1;
+	height: min-content;
 }
 
-@media (min-width: 482px) {
-	.cmsf-hero > .wp-block-group__inner-container > .wp-block-image {
-		display: grid; /* show at larger sizes */
-		grid-column: 3/5;
-		height: min-content;
-	}
+.cmsf-hero > .wp-block-group__inner-container > .wp-block-image::before {
+	content: ""; /* needed to show up */
+	grid-row: 1; /* doesnt come up under > * */
+	grid-column: 1;
+	z-index: 2; /* above the image */
+	background: linear-gradient(90deg, rgba(6,107,126,1) 50%, rgba(255,255,255,0) 100%);
+	/* this would be nice if it was a variable */
+	height: 100%;
+}
 
-	.cmsf-hero > .wp-block-group__inner-container > .wp-block-image > * {
-		grid-row: 1;
-		grid-column: 1;
-	}
-	
+@media (min-width: 52rem) {
 	.cmsf-hero > .wp-block-group__inner-container > .wp-block-image::before {
-		content: ""; /* needed to show up */
-		grid-row: 1; /* doesnt come up under > * */
-		grid-column: 1;
-		z-index: 2; /* above the image */
 		background: linear-gradient(90deg, rgba(6,107,126,1) 0%, rgba(255,255,255,0) 100%);
-		/* this would be nice if it was a variable */
 	}
+}
+
+.cmsf-hero > .wp-block-group__inner-container > .wp-block-image > * {
+	grid-row: 1;
+	grid-column: 1;
 }
 
 .cmsf-hero > .wp-block-group__inner-container > .wp-block-image > img {
@@ -178,16 +182,25 @@ body {
 	
 }
 
+@media (min-width: 482px) {
+	.cmsf-hero > .wp-block-group__inner-container > .wp-block-image {
+			display: grid; /* show at larger sizes */
+	}
+}
+
+@media (min-width: 52rem) {
+	.cmsf-hero > .wp-block-group__inner-container > .wp-block-image {
+		grid-column: 3/5;
+	}
+}
+
 /*------------------------------------*\
   #zero
 \*------------------------------------*/
 
-.cmsf-zero {
-	padding-top: 0 !important;
-}
-
 @media (min-width: 52rem) {
 	.cmsf-zero {
+		padding-top: 0 !important;
 		padding-left: 0 !important;
 	}
 }
@@ -211,6 +224,8 @@ body {
 .cmsf-zero > .wp-block-group__inner-container > .wp-block-columns {
 	padding-top: var(--global--spacing-vertical);
 	grid-column: 1;
+	width: 100% !important; /* hacky fix things */
+	z-index: 3;
 }
 
 @media (min-width: 52rem) {
@@ -229,11 +244,38 @@ body {
 	margin-block-start: 0;
 }
 
+.cmsf-zero > .wp-block-group__inner-container > .wp-block-image > * {
+	grid-row: 1;
+	grid-column: 1;
+}
+
+.cmsf-zero > .wp-block-group__inner-container > .wp-block-image::before {
+	content: ""; /* needed to show up */
+	grid-row: 1; /* doesnt come up under > * */
+	grid-column: 1;
+	z-index: 2; /* above the image */
+	background: linear-gradient(-90deg, rgba(6,107,126,1) 50%, rgba(255,255,255,0) 100%);
+	/* this would be nice if it was a variable */
+}
+
 @media (min-width: 52rem) {
+	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image::before {
+		background: linear-gradient(-90deg, rgba(6,107,126,1) 0%, rgba(255,255,255,0) 100%);
+	}
+}
+
+@media (min-width: 482px) {
 	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image {
 		display: grid;
-		grid-column: 1/3;
+		grid-column: 1;
+	}
+}
+
+/* this isnt big enough */
+@media (min-width: 52rem) {
+	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image {
 		height: min-content;
+		grid-column: 1/3;
 	}
 
 	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image > * {
@@ -241,14 +283,7 @@ body {
 		grid-column: 1;
 	}
 	
-	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image::before {
-		content: ""; /* needed to show up */
-		grid-row: 1; /* doesnt come up under > * */
-		grid-column: 1;
-		z-index: 2; /* above the image */
-		background: linear-gradient(-90deg, rgba(6,107,126,1) 0%, rgba(255,255,255,0) 100%);
-		/* this would be nice if it was a variable */
-	}
+
 }
 
 .cmsf-zero > .wp-block-group__inner-container > .wp-block-image > img {
@@ -520,7 +555,8 @@ well thats ridiculous
 	fill: var(--seahorse);
 } */
 
-.site-header button {
+.site-header button,
+.site-header .button {
 	justify-self: end;
 	align-self: end;
 	background-color: var(--cerulean) !important;
@@ -535,16 +571,19 @@ well thats ridiculous
 }
 
 @media (min-width: 482px) {
-	.site-header button {
+	.site-header button,
+.site-header .button {
 		grid-column: 2;
 	}
 }
 
-.site-header button:not(:hover):not(:active):not(.has-text-color) {
+.site-header button:not(:hover):not(:active):not(.has-text-color),
+.site-header .button:not(:hover):not(:active):not(.has-text-color) {
 	color: var(--global--color-black) !important;
 }
 
-.site-header button:hover {
+.site-header button:hover,
+.site-header .button:hover {
 	box-shadow: 0.15rem 0.15rem 0.15rem var(--global--color-gray);
 	border-color: var(--global--color-gray);
 	color: var(--global--color-dark-gray);
@@ -557,12 +596,14 @@ well thats ridiculous
 	}
 } */
 
-.site-header button {
+.site-header button,
+.site-header .button {
 	background-color: var(--seahorse) !important; /* needed */
 	box-shadow: var(--global--elevation);
 }
 
-.site-header button:hover {
+.site-header button:hover,
+.site-header .button:hover {
 	background-color: hsl(var(--seahorse--base), calc(var(--seahorse--lighten) - 5%)) !important; /* needed */
 	border-color: hsl(var(--seahorse--base), calc(var(--seahorse--lighten) - 10%));
 	color: revert; /* not sure if this is working or just breaking the right way */
@@ -654,7 +695,7 @@ well thats ridiculous
 	margin-right: auto;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	gap: var(--global--spacing-horizontal);
 }
 
 .site-footer .widget-area > * {
@@ -714,4 +755,8 @@ well thats ridiculous
 
 .widget-area a:hover {
 	color: var(--footer--color-link-hover);
+}
+
+.home .wp-block-jetpack-tiled-gallery {
+	margin-bottom: 0;
 }
