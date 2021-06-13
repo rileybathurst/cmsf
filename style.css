@@ -496,17 +496,18 @@ body {
 	z-index: 2; /* show the curved background */
 	align-self: end;
 	fill: var(--global--color-background);
+	/* background: purple; */
 }
 
 .site-header #svg-hide {
 	z-index: 0;
 }
 
-@media (min-width: 482px) {
+/* @media (min-width: 482px) {
 	.site-header svg {
 		margin-block-end: -1rem;
 	}
-}
+} */
 
 .site-header svg #hide {
 	stroke: var(--global--color-background);
@@ -563,9 +564,11 @@ body {
 	z-index: 4;
 	width: 100%;
 	max-width: var(--responsive--aligndefault-width);
-	margin-inline: auto;
+	margin-left: auto;
+	margin-right: auto;
 	display: grid;
-	padding-inline: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 .site-header	.hero > .site-branding {
@@ -683,7 +686,7 @@ body {
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1rem;
+	padding-top: var(--global--spacing-vertical);
 }
 
 .primary-navigation a:link {
