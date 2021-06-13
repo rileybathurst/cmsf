@@ -43,45 +43,47 @@
     
     <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
       
-    <img src="<?php echo get_option( 'image_upload_test' ); ?>" alt="<?php echo get_option( 'text_test' ); ?>" />
-    
-    <div class="header-grid--overlay"><!-- stay gold --></div>
+      <img src="<?php echo get_option( 'image_upload_test' ); ?>" alt="<?php echo get_option( 'text_test' ); ?>" />
+      
+      <div class="header-grid--overlay"><!-- stay gold --></div>
 
-    <!-- the if statement is a little hacky to get a 1px border to dissappear -->
-    <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <rect id="hide" width="100" height="2" y="8" stroke-width="1" />
-      <path d="m 0 8 C 25 10, 75 2, 100 2 L 100 8 L 0 8 Z" />
-      <path d="m 0 8 C 25 10, 75 2, 100 2" fill="transparent" stroke="#1292ab" stroke-width="2" />
-    </svg>
+      <!-- this whole thing is a guess and check -->
+      <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="m 0 8.01 C 25 10, 75 2, 100 2 L 100 10.1 L 0 10.1 Z" id="hide-right" />
+        <path d="m 0 8 C 25 10, 75 2, 100 2" fill="transparent" stroke="#1292ab" id="site-header-wave" />
+      </svg>
+      
+      <svg id="svg-hide" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      </svg>
 
-    <div class="hero">
-      <!-- title -->
-      <div class="site-branding">
-        <?php if ( has_custom_logo() && $show_title ) : ?>
-          <div class="site-logo"><?php the_custom_logo(); ?></div>
-        <?php endif; ?>
-
-        <?php if ( $blog_info ) : ?>
-          <?php if ( is_front_page() && ! is_paged() ) : ?>
-            <h1 class="<?php echo esc_attr( $header_class ); ?>"><?php echo esc_html( $blog_info ); ?></h1>
-          <?php elseif ( is_front_page() || is_home() ) : ?>
-            <h1 class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( $blog_info ); ?></a></h1>
-          <?php else : ?>
-            <p class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( $blog_info ); ?></a></p>
+      <div class="hero">
+        <!-- title -->
+        <div class="site-branding">
+          <?php if ( has_custom_logo() && $show_title ) : ?>
+            <div class="site-logo"><?php the_custom_logo(); ?></div>
           <?php endif; ?>
-        <?php endif; ?>
 
-        <?php if ( $description && true === get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
-          <p class="site-description">
-            <?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput ?>
-          </p>
-        <?php endif; ?>
-      </div><!-- .site-branding -->
-      <!-- /title -->
+          <?php if ( $blog_info ) : ?>
+            <?php if ( is_front_page() && ! is_paged() ) : ?>
+              <h1 class="<?php echo esc_attr( $header_class ); ?>"><?php echo esc_html( $blog_info ); ?></h1>
+            <?php elseif ( is_front_page() || is_home() ) : ?>
+              <h1 class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( $blog_info ); ?></a></h1>
+            <?php else : ?>
+              <p class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( $blog_info ); ?></a></p>
+            <?php endif; ?>
+          <?php endif; ?>
 
-      <!-- <button>Donate</button> -->
-      <a href="https://www.paypal.com/donate/?token=qb-kHWM-n4QXSd4HCd8-fn6cOTUchg32UrTuAAFOZ6dBmQwx5j1E0YIA06Q3rT2TdvQ4r5uDqyMckzeK&locale.x=EN_US" class="button" >Donate</a>
-    </div><!-- .hero -->
+          <?php if ( $description && true === get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
+            <p class="site-description">
+              <?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput ?>
+            </p>
+          <?php endif; ?>
+        </div><!-- .site-branding -->
+        <!-- /title -->
+
+        <!-- <button>Donate</button> -->
+        <a href="https://www.paypal.com/donate/?token=qb-kHWM-n4QXSd4HCd8-fn6cOTUchg32UrTuAAFOZ6dBmQwx5j1E0YIA06Q3rT2TdvQ4r5uDqyMckzeK&locale.x=EN_US" class="button" >Donate</a>
+      </div><!-- .hero -->
 
 	</header><!-- #masthead -->
 

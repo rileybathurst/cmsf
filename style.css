@@ -10,9 +10,103 @@
 	Text Domain:  twentytwentyonechild
 */
 
+
+
+/*------------------------------------*\
+  #Width
+\*------------------------------------*/
+
+/*
+--responsive--aligndefault-width
+--responsive--alignwide-width
+
+.post-thumbnail, .entry-content .wp-audio-shortcode, .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), .default-max-width {
+	max-width: var(--responsive--aligndefault-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 822px) {
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
+	}
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/min()
+The min() function takes one or more comma-separated expressions as its parameter, with the smallest (most negative) expression value result used as the value.
+
+pick the smallest
+610 is the reality at it's widest
+calc(100vw - 8 * var(--global--spacing-horizontal))
+
+:root {
+	--global--spacing-horizontal: 25px;
+}
+
+if this is the order
+8 * 25 = 200
+
+at vw = 822
+822 - 200 = 622
+this is weird its bigger than 610 so never gets used?
+
+what if its in ltr order
+622 - 8 = 614
+614 * 25 = 15350
+well thats ridiculous
+
+@media only screen and (min-width: 822px) {
+
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
+		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
+	}
+}
+
+1240 or ???
+
+822 - 200
+622px
+
+
+*/
+
+/**
+ * Root Media Query Variables
+ */
+:root {
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
+	--responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignfull-width: 100%;
+	--responsive--alignright-margin: var(--global--spacing-horizontal);
+	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+}
+
+@media only screen and (min-width: 482px) {
+
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 4 * var(--global--spacing-horizontal)), 842px);
+		--responsive--alignwide-width: calc(100vw - 4 * var(--global--spacing-horizontal));
+		--responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+@media only screen and (min-width: 822px) {
+
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 842px);
+		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
+	}
+}
+
+
 :root {
 	--maya: hsl(189.8, 81%, 37.1%);
 	--cerulean: hsl(189.5, 90.9%, 25.9%);
+	--cerulean-b: 189.5, 90.9%;
+	--cerulean-l: 25.9%;
+
 	/* --seahorse: hsl(48.9, 98.4%, 49.4%); */
 	
 	/* theres a css-tricks about this i need to find again */
@@ -335,96 +429,6 @@ body {
 	filter: saturate(0) !important;
 }
 
-
-/*------------------------------------*\
-  #Width
-\*------------------------------------*/
-
-/*
---responsive--aligndefault-width
---responsive--alignwide-width
-
-.post-thumbnail, .entry-content .wp-audio-shortcode, .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), .default-max-width {
-	max-width: var(--responsive--aligndefault-width);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-@media only screen and (min-width: 822px) {
-	:root {
-		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
-	}
-}
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/min()
-The min() function takes one or more comma-separated expressions as its parameter, with the smallest (most negative) expression value result used as the value.
-
-pick the smallest
-610 is the reality at it's widest
-calc(100vw - 8 * var(--global--spacing-horizontal))
-
-:root {
-	--global--spacing-horizontal: 25px;
-}
-
-if this is the order
-8 * 25 = 200
-
-at vw = 822
-822 - 200 = 622
-this is weird its bigger than 610 so never gets used?
-
-what if its in ltr order
-622 - 8 = 614
-614 * 25 = 15350
-well thats ridiculous
-
-@media only screen and (min-width: 822px) {
-
-	:root {
-		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
-		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
-	}
-}
-
-1240 or ???
-
-822 - 200
-622px
-
-
-*/
-
-/**
- * Root Media Query Variables
- */
-:root {
-	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
-	--responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
-	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
-	--responsive--alignfull-width: 100%;
-	--responsive--alignright-margin: var(--global--spacing-horizontal);
-	--responsive--alignleft-margin: var(--global--spacing-horizontal);
-}
-
-@media only screen and (min-width: 482px) {
-
-	:root {
-		--responsive--aligndefault-width: min(calc(100vw - 4 * var(--global--spacing-horizontal)), 842px);
-		--responsive--alignwide-width: calc(100vw - 4 * var(--global--spacing-horizontal));
-		--responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
-	}
-}
-@media only screen and (min-width: 822px) {
-
-	:root {
-		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 842px);
-		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
-	}
-}
-
-
 /*------------------------------------*\
   #Header this needs a little work in the php as well but as light as possible
 \*------------------------------------*/
@@ -432,10 +436,28 @@ well thats ridiculous
 .site-header {
 	display: grid;
 	max-width: 100vw;
-	padding-block: 0;
+	padding-top: 0;
+	padding-bottom: 0;
 	z-index: 1;
 	position: relative;
 	margin-block-end: 1rem;
+	background: var(--cerulean);
+}
+
+.site-header #site-header-wave {
+	stroke-width: 2;
+}
+
+@media (min-width: 482px) {
+	.site-header #site-header-wave {
+		stroke-width: 1;
+	}
+}
+
+@media (min-width: 964px) {
+	.site-header #site-header-wave {
+		stroke-width: 0.5;
+	}
 }
 
 .home .site-header {
@@ -455,14 +477,18 @@ well thats ridiculous
 .site-header > img {
 	object-fit: cover;
 	width: 100%;
+	max-width: var(--responsive--aligndefault-width);
+	margin-left: auto;
+	margin-right: auto;
 	z-index: 1;
 	align-self: start;
 	max-height: 15rem; /* guess and check */
 }
 
-@media (min-height: var(--breakpoint_sm)) {
+@media (min-height: 482px) {
 	.site-header > img {
-		max-height: 12rem; /* guess and check */
+		max-height: 20rem; /* guess and check */
+		object-position: 50% 66%; /* guess anc check */
 	}
 }
 
@@ -470,6 +496,10 @@ well thats ridiculous
 	z-index: 2; /* show the curved background */
 	align-self: end;
 	fill: var(--global--color-background);
+}
+
+.site-header #svg-hide {
+	z-index: 0;
 }
 
 @media (min-width: 482px) {
@@ -483,6 +513,7 @@ well thats ridiculous
 }
 
 .home .site-header svg #hide {
+	fill: var(--cerulean);
 	stroke: var(--cerulean);
 }
 
@@ -504,11 +535,13 @@ well thats ridiculous
 	height: 100%;
 }
 
+/* 
+	Ive had this come and go Im not sure about it
 @media (min-width: 482px) {
 	.site-header .header-grid--overlay {
-		border-bottom: 1rem solid white; /* variable this */
+		border-bottom: 1rem solid white; 
 	}
-}
+} */
 
 .home .site-header .header-grid--overlay {
 	border-color: var(--cerulean);
@@ -540,7 +573,18 @@ well thats ridiculous
 	grid-column: 1;
 	align-self: center;
 	display: flex;
-	align-items: baseline;
+	flex-wrap: wrap;
+	max-width: 20rem;
+	align-items: end;
+	margin-top: 1rem;
+}
+
+@media (min-width: 482px) {
+	.site-header	.hero > .site-branding {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		gap: 1rem;
+	}
 }
 
 .site-header .site-logo {
@@ -551,6 +595,16 @@ well thats ridiculous
 .site-header .site-branding a {
 	color: white;
 	text-decoration: none;
+}
+
+.site-header .custom-logo {
+	max-width: 3rem;
+}
+
+@media (min-width: 482px) {
+	.site-header .custom-logo {
+		max-width: max-content;
+	}
 }
 
 .site-header .site-description {
@@ -571,14 +625,16 @@ well thats ridiculous
 	box-shadow: 0.15rem 0.15rem 0.15rem var(--button-box-shadow-color);
 	/* I want a light gray on light and a black on dark */
 	box-shadow: var(--global--elevation);
-	grid-row: 2;
+	grid-row: 1;
 	grid-column: 1;
 	padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(0.5 * var(--button--padding-horizontal));
 }
 
+
 @media (min-width: 482px) {
 	.site-header button,
-.site-header .button {
+	.site-header .button {
+		grid-row: 2;
 		grid-column: 2;
 	}
 }
@@ -627,6 +683,7 @@ well thats ridiculous
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 1rem;
 }
 
 .primary-navigation a:link {
