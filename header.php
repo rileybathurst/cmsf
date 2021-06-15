@@ -45,7 +45,7 @@
       
       <img src="<?php echo get_option( 'image_upload_test' ); ?>" alt="<?php echo get_option( 'text_test' ); ?>" />
       
-      <div class="header-grid--overlay"><!-- stay gold --></div>
+      <div class="header-grid--overlay" style="background-color: <?php echo get_option( 'themename_theme_options_link_color' ); ?>"><!-- stay gold --></div>
 
       <!-- this whole thing is a guess and check -->
       <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

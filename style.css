@@ -122,6 +122,8 @@ well thats ridiculous
 	--breakpoint_sm: 482px;
 
 	--primary-nav--color-text: var(--cerulean);
+
+	--button--border-radius: 0.5rem;
 }
 
 .is-dark-theme {
@@ -477,18 +479,20 @@ body {
 .site-header > img {
 	object-fit: cover;
 	width: 100%;
-	max-width: 1280px; /* dont do the regular variable it has margins */
+	max-width: 1440px; /* guess and check dont do the regular variable it has margins */
 	margin-left: auto;
 	margin-right: auto;
 	z-index: 1;
 	align-self: start;
 	max-height: 15rem; /* guess and check */
+	clip-path: polygon(0 0, 99.9% 0, 99.9% 100%, 0 100%);
+	/* this is a hack t the default image haveing a bad crop */
 }
 
 @media (min-height: 482px) {
 	.site-header > img {
+		height: 100%;
 		max-height: 20rem; /* guess and check */
-		object-position: 50% 66%; /* guess anc check */
 	}
 }
 
@@ -530,9 +534,9 @@ body {
 } */
 
 .site-header .header-grid--overlay {
-	background: var(--cerulean);
-	mix-blend-mode: multiply;
-	z-index: 2;
+	/* background: var(--cerulean); */
+	/* mix-blend-mode: multiply; */
+	/* z-index: 2; */
 	height: 100%;
 }
 
@@ -558,6 +562,7 @@ body {
 
 .site-header .site-title {
 	color: var(--global--color-white); /* this could be a problem based on image */
+	margin:	calc(var(--global--spacing-vertical) / 2) calc(var(--global--spacing-horizontal) / 2);
 }
 
 .site-header .hero {
@@ -577,9 +582,11 @@ body {
 	align-self: center;
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 20rem;
+	max-width: 22rem; /* guess and check */
 	align-items: end;
 	margin-top: 1rem;
+	background: #00000066; /* this isnt 66 its a hex code */
+	border-radius: var(--button--border-radius);
 }
 
 @media (min-width: 482px) {

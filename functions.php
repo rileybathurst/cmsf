@@ -145,37 +145,56 @@ function twenttwentyone_child_customize_register($wp_customize){
 	));
 
 	$wp_customize->add_control(
-				new WP_Customize_Image_Control(
-						$wp_customize,
-						'header',
-						array(
-								'label'      => __( 'Upload a logo', 'theme_name' ),
-								'section'    => 'themename_color_scheme',
-								'settings'   => 'image_upload_test',
-								'context'    => 'your_setting_context'
-						)
-				)
-		);
-
-		// <img src="<?php echo get_option( 'image_upload_test' ); " alt="" />
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'header',
+			array(
+				'label'				=> __( 'Upload a logo', 'theme_name' ),
+				'section'			=> 'themename_color_scheme',
+				'settings'		=> 'image_upload_test',
+				'context'			=> 'your_setting_context'
+			)
+		)
+	);
+	// <img src="<?php echo get_option( 'image_upload_test' ); " alt="" />
 
 	//  =============================
-    //  = Text Input                =
-    //  =============================
-    $wp_customize->add_setting('text_test', array(
-			'default'        => 'value_xyz',
-			'capability'     => 'edit_theme_options',
-			'type'           => 'option',
-
+	//  = Text Input                =
+	//  =============================
+	$wp_customize->add_setting('text_test', array(
+		'default'        => 'value_xyz',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'option',
 	));
 
 	$wp_customize->add_control('themename_text_test', array(
-			'label'      => __('Text Test', 'themename'),
-			'section'    => 'themename_color_scheme',
-			'settings'   => 'text_test',
+		'label'      => __('Text Test', 'themename'),
+		'section'    => 'themename_color_scheme',
+		'settings'   => 'text_test',
 	));
-
 	// <h1> php echo get_option( 'text_test' ); </h1>
 
+	//  =============================
+	//  = Color Picker              =
+	//  =============================
+
+	$wp_customize->add_setting(
+		// 'themename_theme_options[link_color]', array(
+		'themename_theme_options_link_color', array(
+			'default'							=> '#000',
+			'sanitize_callback'		=> 'sanitize_hex_color',
+			'capability'					=> 'edit_theme_options',
+			'type'								=> 'option',
+		)
+	);
+
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control($wp_customize, 'link_color', array(
+			'label'    => __('Link Color', 'themename'),
+			'section'  => 'themename_color_scheme',
+			'settings' => 'themename_theme_options_link_color',
+		)
+	));
+	// <h1> php echo get_option( 'themename_theme_options' ); </h1>
 }
 add_action('customize_register', 'twenttwentyone_child_customize_register');
