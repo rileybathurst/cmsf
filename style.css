@@ -563,6 +563,7 @@ body {
 .site-header .site-title {
 	color: var(--global--color-white); /* this could be a problem based on image */
 	margin:	calc(var(--global--spacing-vertical) / 2) calc(var(--global--spacing-horizontal) / 2);
+	margin-top: 0;
 }
 
 .site-header .hero {
@@ -585,6 +586,7 @@ body {
 	max-width: 22rem; /* guess and check */
 	align-items: end;
 	margin-top: 1rem;
+	margin-bottom: 2rem;
 	background: #00000066; /* this isnt 66 its a hex code */
 	border-radius: var(--button--border-radius);
 }
@@ -600,6 +602,7 @@ body {
 .site-header .site-logo {
 	width: min-content;
 	border-bottom: none;
+	margin-bottom: 0;
 }
 
 .site-header .site-branding a {
@@ -638,6 +641,12 @@ body {
 	grid-row: 1;
 	grid-column: 1;
 	padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(0.5 * var(--button--padding-horizontal));
+}
+
+@media (max-width: 481px) {
+	.site-header.has-logo.has-title-and-tagline.has-menu .site-branding {
+		max-width: calc(100% - 140px);
+	}
 }
 
 
@@ -720,6 +729,8 @@ body {
 	z-index: 99;
 	background: var(--seahorse);
 	color: var(--global--color-black);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 /*------------------------------------*\
