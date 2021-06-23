@@ -31,6 +31,8 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1292ab">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#066b7e">
 	<?php wp_head(); ?>
 </head>
 
