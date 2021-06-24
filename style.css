@@ -10,67 +10,6 @@
 	Text Domain:  twentytwentyonechild
 */
 
-
-
-/*------------------------------------*\
-  #Width
-\*------------------------------------*/
-
-/*
---responsive--aligndefault-width
---responsive--alignwide-width
-
-.post-thumbnail, .entry-content .wp-audio-shortcode, .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), .default-max-width {
-	max-width: var(--responsive--aligndefault-width);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-@media only screen and (min-width: 822px) {
-	:root {
-		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
-	}
-}
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/min()
-The min() function takes one or more comma-separated expressions as its parameter, with the smallest (most negative) expression value result used as the value.
-
-pick the smallest
-610 is the reality at it's widest
-calc(100vw - 8 * var(--global--spacing-horizontal))
-
-:root {
-	--global--spacing-horizontal: 25px;
-}
-
-if this is the order
-8 * 25 = 200
-
-at vw = 822
-822 - 200 = 622
-this is weird its bigger than 610 so never gets used?
-
-what if its in ltr order
-622 - 8 = 614
-614 * 25 = 15350
-well thats ridiculous
-
-@media only screen and (min-width: 822px) {
-
-	:root {
-		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
-		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
-	}
-}
-
-1240 or ???
-
-822 - 200
-622px
-
-
-*/
-
 /**
  * Root Media Query Variables
  */
@@ -109,11 +48,9 @@ well thats ridiculous
 
 	/* --seahorse: hsl(48.9, 98.4%, 49.4%); */
 	
-	/* theres a css-tricks about this i need to find again */
 	--seahorse--base: 48.9, 98.4%;
 	--seahorse--lighten: 49.4%;
 	--seahorse: hsl(var(--seahorse--base), var(--seahorse--lighten));
-	/* this can now be done inline */
 	--seahorse-darken: hsl(var(--seahorse--base), calc(var(--seahorse--lighten) - 20%));
 
 	--footer--color-link: var(--cerulean);
@@ -185,22 +122,14 @@ well thats ridiculous
 	color: var(--white);
 }
 
-/*
-body {
-		background: rebeccapurple !important;
-	}
-} */
-
 /*------------------------------------*\
   #Patterns
 \*------------------------------------*/
 
 /* Theres a way of having this go left to right I just don't know what it is */
-
 @media (min-width: 482px) {
 	.cmsf-hero {
 		padding-right: 0 !important;
-		/* max-width: calc(var(--responsive--alignfull-width) - var(--global--spacing-horizontal)); */
 	}
 }
 
@@ -383,8 +312,6 @@ body {
 		grid-row: 1;
 		grid-column: 1;
 	}
-	
-
 }
 
 .cmsf-zero > .wp-block-group__inner-container > .wp-block-image > img {
@@ -507,12 +434,6 @@ body {
 	z-index: 0;
 }
 
-/* @media (min-width: 482px) {
-	.site-header svg {
-		margin-block-end: -1rem;
-	}
-} */
-
 .site-header svg #hide {
 	stroke: var(--global--color-background);
 }
@@ -526,27 +447,12 @@ body {
 	fill: var(--cerulean);
 }
 
-/* .site-header > img {
-	object-fit: cover;
-	width: 100%;
-	max-height: 10rem;
-	z-index: 1;
-} */
-
 .site-header .header-grid--overlay {
 	/* background: var(--cerulean); */
 	/* mix-blend-mode: multiply; */
 	/* z-index: 2; */
 	height: 100%;
 }
-
-/* 
-	Ive had this come and go Im not sure about it
-@media (min-width: 482px) {
-	.site-header .header-grid--overlay {
-		border-bottom: 1rem solid white; 
-	}
-} */
 
 .home .site-header .header-grid--overlay {
 	border-color: var(--cerulean);
@@ -669,13 +575,6 @@ body {
 	border-color: var(--global--color-gray);
 	color: var(--global--color-dark-gray);
 }
-
-/* this works to the site not the theme */
-/* @media (prefers-color-scheme: dark) {
-	.site-header button {
-		box-shadow: 0.15rem 0.15rem 0.15rem var(--global--color-black);
-	}
-} */
 
 .site-header button,
 .site-header .button {
@@ -831,7 +730,6 @@ body {
 	margin-block: 0;
 	padding-inline: 1rem;
 }
-
 
 .home .entry-footer {
 	display: none;
