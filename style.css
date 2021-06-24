@@ -314,9 +314,15 @@
 	}
 }
 
+@media (min-width: 482px) {
+	.cmsf-zero > .wp-block-group__inner-container > .wp-block-image > img {
+		display: none;
+	}
+}
+
 .cmsf-zero > .wp-block-group__inner-container > .wp-block-image > img {
 	width: 100%;
-	height: min-content;
+	/* height: min-content; */
 	object-fit: cover;
 	mix-blend-mode: multiply;
 	filter: saturate(0);
@@ -594,7 +600,6 @@
 .site-header .button:hover {
 	background-color: hsl(var(--seahorse--base), calc(var(--seahorse--lighten) - 5%)) !important; /* needed */
 	border-color: hsl(var(--seahorse--base), calc(var(--seahorse--lighten) - 10%));
-	color: revert; /* not sure if this is working or just breaking the right way */
 }
 
 .site-branding:last-child {
