@@ -81,7 +81,8 @@
         <!-- /title -->
 
         <!-- <button>Donate</button> -->
-        <a href="https://www.paypal.com/donate/?token=qb-kHWM-n4QXSd4HCd8-fn6cOTUchg32UrTuAAFOZ6dBmQwx5j1E0YIA06Q3rT2TdvQ4r5uDqyMckzeK&locale.x=EN_US" class="button" >Donate</a>
+        <a href="https://www.paypal.com/donate?hosted_button_id=7U68QJ65WV9C6" class="button" >Donate</a>
+
       </div><!-- .hero -->
 
 	</header><!-- #masthead -->
