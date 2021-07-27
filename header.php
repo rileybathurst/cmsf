@@ -33,6 +33,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1292ab">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#066b7e">
+
+  <meta
+        http-equiv="Content-Security-Policy"
+        content="
+        default-src 'self';
+        "
+    >
+    <!-- frame-ancestors 'none'; -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
 	<?php wp_head(); ?>
 </head>
 
