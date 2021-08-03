@@ -1,0 +1,22 @@
+# Use PHP70 as default
+AddHandler application/x-httpd-php70 .php
+<IfModule mod_suphp.c>
+#    suPHP_ConfigPath /opt/php70/lib
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy: "default-src 'self'; \
+style-src 'self' 'unsafe-inline' https://*.wp.com; \
+script-src 'self' https://www.google.com https://www.gstatic.com https://*.wp.com 'unsafe-inline'; \
+img-src 'self' secure.gravatar.com https://*.wp.com; \
+font-src 'self' https://*.wp.com data:; \
+child-src https://www.youtube.com https://player.vimeo.com https://*.wp.com; \
+frame-ancestors 'none';"
+
+Header set Strict-Transport-Security: max-age=63072000
+
+Header set X-Content-Type-Options: nosniff
+
+Header set X-Frame-Options: DENY
+
+</IfModule>
