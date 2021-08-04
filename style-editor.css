@@ -15,3 +15,18 @@ body {
 	mix-blend-mode: multiply;
 	filter: saturate(0) !important;
 }
+
+.is-style-alignfull {
+  max-width: 100%;
+}
+
+.cmsf-hero,
+.cmsf-zero {
+  max-width: 100%;
+}
+
+.is-style-alignfull .wp-block-columns,
+.cmsf-hero .wp-block-columns,
+.cmsf-zero .wp-block-columns {
+  margin-inline: auto;
+}

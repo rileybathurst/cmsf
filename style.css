@@ -127,11 +127,20 @@
 /*------------------------------------*/
 
 
-.is-style-alignfull {
-	max-width: var(--responsive--alignfull-width);
+/* .is-style-alignfull {
+	max-width: var(--responsive--alignfull-width); 100%
 	width: var(--responsive--alignfull-width);
+	width: 100%;
+	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+} */
+
+/* this might be overkill as it does all */
+/* theres a bunch of options here about which styles are actually here */
+.is-style-alignfull .wp-block-columns.is-style-default {
+	max-width: var(--responsive--aligndefault-width);
+	margin-inline: auto;
 }
 
 /*------------------------------------*\
@@ -284,6 +293,22 @@
 	min-height: 100%;
 	object-fit: cover; /* this isnt there yet */
 	margin-block-start: 0;
+}
+
+.cmsf-zero  > .wp-block-image figure {
+	width: 100%;
+}
+
+.cmsf-zero  > .wp-block-image img {
+	max-height: 15rem;
+	width: 100%;
+	object-fit: cover;
+}
+
+@media (min-height: 482px) {
+	.cmsf-zero  > .wp-block-image img {
+		max-height: 20rem; /* guess and check */
+	}
 }
 
 .cmsf-zero  > .wp-block-image > * {
@@ -774,6 +799,7 @@
 
 #events {
 	background: var(--seahorse);
+	color: black; /* light and dark for now */
 	text-align: center;
 	padding: 0.25rem 0.5rem;
 }

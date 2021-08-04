@@ -151,7 +151,7 @@ function twenttwentyone_child_customize_register($wp_customize){
 
     $wp_customize->add_control(
         new WP_Customize_Image_Control( $wp_customize, 'custom_header_image', array(
-                'label'		=> __( 'Upload a logo', 'twenttwentyone_child' ),
+                'label'		=> __( 'Header Image', 'twenttwentyone_child' ),
                 'section'	=> 'cmsf_options',
                 'settings'	=> 'header_image',
                 'context'	=> 'your_setting_context'
