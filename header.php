@@ -48,10 +48,10 @@
     
     <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
       
-      <!-- 🚨 -->
-      <img src="<?php echo get_option( 'image_upload_test' ); ?>" alt="<?php echo get_option( 'text_test' ); ?>" />
-      
-      <div class="header-grid--overlay" style="background-color: <?php echo get_option( 'themename_theme_options_link_color' ); ?>"><!-- stay gold --></div>
+      <!-- I dont know if I can grab the alt from this image -->
+      <img src="<?php echo get_option( 'header_image' ); ?>" alt="<?php echo get_option( 'header_alt' ); ?>" />
+
+      <div class="header-grid--overlay" style="background-color: <?php echo get_option( 'sides_of_header_image' ); ?>"><!-- stay gold --></div>
 
       <!-- this whole thing is a guess and check -->
       <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

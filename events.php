@@ -2,6 +2,7 @@
 
 $date_now = new DateTime(); // current time date, note this cant be used with an echo $date_now needs print_r($date_now);
 $stack = array(); // build an empty array to add event dates to
+$single = get_option( 'single_event' );
 
 // query for events
 $args = [
@@ -44,9 +45,12 @@ asort($stack); // ascending sort is oldest to newest and doesnt alter the keys
 				</a>
 			</p>
 		</div>
-	<?php
-	// this would be nice to have under a checkbox to show one or all
-	// break; // stop looping once we find something in the future -->
+		<?php
+
+		if ($single) {
+			break; // stop looping once we find something in the future -->
+		}
+
 	} // if the events in the future
 } // loop of all events
 ?>
