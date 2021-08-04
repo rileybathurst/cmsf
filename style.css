@@ -772,8 +772,45 @@
 	/* #events */
 /*------------------------------------*/
 
-.event-wrapper {
+#events {
 	background: var(--seahorse);
-	padding: 0.25rem 0.5rem;
 	text-align: center;
+	padding: 0.25rem 0.5rem;
+}
+
+#events * {
+	border-bottom: 1px solid black;
+}
+
+#events *:last-child {
+	border-bottom: none;
+}
+
+.events-thumbnail {
+	margin-inline: auto;
+}
+
+.arity_grid {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr 1.67fr;
+	max-width: var(--responsive--aligndefault-width);
+	margin-inline: auto;
+}
+
+.arity_grid .entry-header{
+	grid-row: 1;
+	grid-column: 2;
+	width: 100%;
+}
+
+.arity_grid .events-thumbnail {
+	grid-row: 1/4;
+	grid-column: 1;
+}
+
+.arity_grid .entry-content {
+	grid-row: 2;
+	grid-column: 2;
+	width: 100%;
 }
