@@ -214,3 +214,11 @@ function twenttwentyone_child_customize_register($wp_customize){
     ));
 }
 add_action('customize_register', 'twenttwentyone_child_customize_register');
+
+// REMOVE WP EMOJI
+// https://www.denisbouquet.com/remove-wordpress-emoji-code/
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );

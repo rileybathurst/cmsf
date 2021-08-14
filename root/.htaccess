@@ -7,12 +7,11 @@ AddHandler application/x-httpd-php70 .php
 <IfModule mod_headers.c>
 
 Header set Content-Security-Policy-Report-Only: "default-src 'self'; \
-style-src 'self' 'unsafe-inline'; \
-script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; \
-img-src 'self' secure.gravatar.com; \
-font-src 'self' data:; \
+style-src 'self' 'unsafe-inline' https://*.wp.com; \
+script-src 'self' 'unsafe-inline' https://*.wp.com https://www.google.com https://www.gstatic.com; \
+img-src 'self' secure.gravatar.com https://*.wp.com; \
+font-src 'self' https://*.wp.com data:; \
 child-src https://www.youtube.com https://player.vimeo.com; \
-frame-ancestors 'none'; \
 report-uri /csp-violation-report-endpoint.php
 "
 

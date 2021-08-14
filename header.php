@@ -34,6 +34,16 @@
 	<meta name="theme-color" content="#1292ab">
 	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#066b7e">
 
+	<meta
+		http-equiv="Content-Security-Policy"
+		content="default-src 'self';
+			style-src 'self' 'unsafe-inline' https://*.wp.com;
+			script-src 'self' https://*.wp.com https://www.google.com https://www.gstatic.com 'sha256-6r2qbSkz8dtBMS3ooVDFDLjaxGe3TBTfEbga5p/ptJs=' 'sha256-PrrYZwIbv7u8ClnAZglH3XIAcaemhBRwQg//ZjINEGg=' 'sha256-tKFEl+z38aZDlw9RMTEZaj9/SQjUxg/YwZE/x2IJW4Y=' 'sha256-dQ35t0GaQdSW4MS337Js/lfBjpF3Jpc8Bc8TgkEtQgg=' 'sha256-zP2IMPME2DmfLCZvj2W3aEQqgpME3S6fNQg88SESNF0=' 'sha256-vbDZObPgUGrM4MfomJalrWAAqwsIy7upNtZbLdJGX5c=' 'sha256-8MhWyiQ7GHsMbYi2+TlnbYXEHxvgxxGwpJw3zN/1Un4=';
+			img-src 'self' https://*.wp.com secure.gravatar.com;
+			font-src 'self' data: https://*.wp.com;
+			child-src https://www.youtube.com https://player.vimeo.com;"
+	/>
+
 	<?php wp_head(); ?>
 </head>
 
