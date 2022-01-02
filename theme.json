@@ -4,19 +4,14 @@
 		"color": {
 			"palette": [
 				{
-					"slug": "maya",
-					"color": "#1292AB",
-					"name": "maya"
+					"slug": "blaze",
+					"color": "#D03737",
+					"name": "blaze"
 				},
 				{
-					"slug": "cerulean",
-					"color": "#066B7E",
-					"name": "cerulean"
-				},
-				{
-					"slug": "seahorse",
-					"color": "#FACC02",
-					"name": "seahorse"
+					"slug": "sand",
+					"color": "#EFEBE7",
+					"name": "sand"
 				}
 			]
 		}
