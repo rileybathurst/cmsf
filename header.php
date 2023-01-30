@@ -95,7 +95,7 @@
         <!-- /title -->
 
         <!-- <button>Donate</button> -->
-        <a href="https://www.paypal.com/donate?hosted_button_id=7U68QJ65WV9C6" class="button" >Donate</a>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=MCTCVRKY9MG54" class="button" >Donate</a>
 
       </div><!-- .hero -->
 
