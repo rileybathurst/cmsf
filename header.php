@@ -38,8 +38,8 @@
 		http-equiv="Content-Security-Policy"
 		content="default-src 'self';
 			style-src 'self' 'unsafe-inline' https://*.wp.com http://cdn-images.mailchimp.com/;
-			script-src 'self' https://*.wp.com https://www.google.com https://www.gstatic.com https://www.youtube.com http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js 'unsafe-inline';
-			img-src 'self' https://*.wp.com secure.gravatar.com http://cdn-images.mailchimp.com https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg;
+			script-src 'self' https://*.wp.com https://www.google.com https://www.gstatic.com https://www.youtube.com http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js 'unsafe-inline' https://s3.amazonaws.com/downloads.mailchimp.com/;
+			img-src 'self' https://*.wp.com secure.gravatar.com http://cdn-images.mailchimp.com https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg https://eep.io/mc-cdn-images/;
 			font-src 'self' data: https://*.wp.com;
 			child-src https://www.youtube.com https://player.vimeo.com;"
 	/>
