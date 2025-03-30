@@ -37,14 +37,14 @@
 	<meta
 		http-equiv="Content-Security-Policy"
 		content="default-src 'self';
-			style-src 'self' 'unsafe-inline' https://*.wp.com http://cdn-images.mailchimp.com/;
+			style-src 'self' 'unsafe-inline' https://*.wp.com http://cdn-images.mailchimp.com/ https://fonts.googleapis.com/;
 			script-src 'self' https://*.wp.com https://www.google.com https://www.gstatic.com https://www.youtube.com http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js 'unsafe-inline' https://s3.amazonaws.com/downloads.mailchimp.com/;
 			img-src 'self' https://*.wp.com secure.gravatar.com http://cdn-images.mailchimp.com https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg https://eep.io/mc-cdn-images/;
 			font-src 'self' data: https://*.wp.com;
 			child-src https://www.youtube.com https://player.vimeo.com;"
 	/>
 
-  <!-- script-src removed 'nonce-2726c7f26c' and a bunch of sha256 to move to unsafe inline just getting it started clean -->
+  <!-- TODO: script-src removed 'nonce-2726c7f26c' and a bunch of sha256 to move to unsafe inline just getting it started clean -->
 
 	<?php wp_head(); ?>
 </head>
